@@ -1,0 +1,70 @@
+name: policy-router
+on:
+  - pull_request
+  - workflow_dispatch
+jobs:
+  policy-router:
+    name: policy-router
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print governed files
+        run: 'echo "Files: 5"'
+      - name: Print required checks
+        run: 'echo "Checks: check-backend-api, check-domain-logic,
+          check-external-integration, check-infra-workflow, check-llm-modeling"'
+  check-backend-api:
+    name: check-backend-api
+    runs-on: ubuntu-latest
+    needs:
+      - policy-router
+    if: ${{ always() }}
+    steps:
+      - name: Summarize triggered files
+        run: 'echo "Triggered files: src/api/routes.ts"'
+      - name: Summarize capability gates
+        run: 'echo "Capabilities: backend.api"'
+  check-domain-logic:
+    name: check-domain-logic
+    runs-on: ubuntu-latest
+    needs:
+      - policy-router
+    if: ${{ always() }}
+    steps:
+      - name: Summarize triggered files
+        run: 'echo "Triggered files: src/domain/user-service.ts"'
+      - name: Summarize capability gates
+        run: 'echo "Capabilities: domain.logic"'
+  check-external-integration:
+    name: check-external-integration
+    runs-on: ubuntu-latest
+    needs:
+      - policy-router
+    if: ${{ always() }}
+    steps:
+      - name: Summarize triggered files
+        run: 'echo "Triggered files: src/clients/openai-client.ts"'
+      - name: Summarize capability gates
+        run: 'echo "Capabilities: external.integration"'
+  check-infra-workflow:
+    name: check-infra-workflow
+    runs-on: ubuntu-latest
+    needs:
+      - policy-router
+    if: ${{ always() }}
+    steps:
+      - name: Summarize triggered files
+        run: 'echo "Triggered files: package.json"'
+      - name: Summarize capability gates
+        run: 'echo "Capabilities: infra.workflow"'
+  check-llm-modeling:
+    name: check-llm-modeling
+    runs-on: ubuntu-latest
+    needs:
+      - policy-router
+    if: ${{ always() }}
+    steps:
+      - name: Summarize triggered files
+        run: 'echo "Triggered files: src/clients/openai-client.ts,
+          src/runtime-critical.test.ts"'
+      - name: Summarize capability gates
+        run: 'echo "Capabilities: llm.modeling"'

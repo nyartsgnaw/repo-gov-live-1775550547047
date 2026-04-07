@@ -1,0 +1,60 @@
+id: owner-infra-workflow
+capability_id: infra.workflow
+label: Infra Workflow
+principals:
+  - kind: codex-agent
+    identity: owner-infra-workflow
+    displayName: owner-infra-workflow
+  - kind: local-git
+    identity: owner-infra-workflow@local
+    displayName: owner-infra-workflow local git persona
+  - kind: github
+    identity: "@nyartsgnaw"
+    displayName: "@nyartsgnaw"
+governed_files:
+  - package.json
+scope_paths:
+  - package.json
+trigger_events:
+  - pr_opened
+  - synchronize
+  - ready_for_review
+  - check_run
+  - check_suite
+state_machine:
+  - idle
+  - requested
+  - analyzing_diff
+  - selecting_suites
+  - running_checks
+  - drafting_review
+  - approved
+  - changes_requested
+  - escalated
+  - stale_due_to_new_push
+allowed_actions:
+  - inspect_diff
+  - map_impacted_suites
+  - review_debug_assets
+  - run_scoped_checks
+  - draft_review
+  - request_changes
+  - escalate
+forbidden_actions:
+  - modify_protected_code
+  - commit_changes
+  - publish_artifacts
+  - apply_remote_github_settings
+  - approve_out_of_scope_changes
+suites: []
+required_checks:
+  - check-infra-workflow
+approval_policy:
+  draft_reviews_are_provisional: true
+  stale_review_dismissal: false
+  require_codeowner_review: true
+  require_status_checks: true
+escalation:
+  - Escalate when deterministic evidence is missing or contradictory.
+  - Escalate when changes land outside the declared capability scope.
+  - Escalate when governance control-plane files drift unexpectedly.

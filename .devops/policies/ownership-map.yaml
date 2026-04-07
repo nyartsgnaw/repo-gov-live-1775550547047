@@ -1,0 +1,77 @@
+capability_owners:
+  - id: owner-backend-api
+    capabilityId: backend.api
+    label: Backend API
+    files:
+      - src/api/routes.ts
+    principals:
+      - kind: codex-agent
+        identity: owner-backend-api
+        displayName: owner-backend-api
+      - kind: local-git
+        identity: owner-backend-api@local
+        displayName: owner-backend-api local git persona
+      - kind: github
+        identity: "@nyartsgnaw"
+        displayName: "@nyartsgnaw"
+  - id: owner-domain-logic
+    capabilityId: domain.logic
+    label: Domain Logic
+    files:
+      - src/domain/user-service.ts
+    principals:
+      - kind: codex-agent
+        identity: owner-domain-logic
+        displayName: owner-domain-logic
+      - kind: local-git
+        identity: owner-domain-logic@local
+        displayName: owner-domain-logic local git persona
+      - kind: github
+        identity: "@nyartsgnaw"
+        displayName: "@nyartsgnaw"
+  - id: owner-external-integration
+    capabilityId: external.integration
+    label: External Integration
+    files:
+      - src/clients/openai-client.ts
+    principals:
+      - kind: codex-agent
+        identity: owner-external-integration
+        displayName: owner-external-integration
+      - kind: local-git
+        identity: owner-external-integration@local
+        displayName: owner-external-integration local git persona
+      - kind: github
+        identity: "@nyartsgnaw"
+        displayName: "@nyartsgnaw"
+  - id: owner-infra-workflow
+    capabilityId: infra.workflow
+    label: Infra Workflow
+    files:
+      - package.json
+    principals:
+      - kind: codex-agent
+        identity: owner-infra-workflow
+        displayName: owner-infra-workflow
+      - kind: local-git
+        identity: owner-infra-workflow@local
+        displayName: owner-infra-workflow local git persona
+      - kind: github
+        identity: "@nyartsgnaw"
+        displayName: "@nyartsgnaw"
+  - id: owner-llm-modeling
+    capabilityId: llm.modeling
+    label: LLM Modeling
+    files:
+      - src/clients/openai-client.ts
+      - src/runtime-critical.test.ts
+    principals:
+      - kind: codex-agent
+        identity: owner-llm-modeling
+        displayName: owner-llm-modeling
+      - kind: local-git
+        identity: owner-llm-modeling@local
+        displayName: owner-llm-modeling local git persona
+      - kind: github
+        identity: "@nyartsgnaw"
+        displayName: "@nyartsgnaw"

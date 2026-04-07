@@ -1,0 +1,24 @@
+root_imports:
+  - .devops/generators/claude/root-template.md
+  - .devops/runtime-contracts/debug-assets.yaml
+scoped_template: .devops/generators/claude/subtree-template.md
+scoped_memories:
+  - path: src/CLAUDE.md
+    enabled: true
+    scope_path: src
+    owner_ids:
+      - owner-backend-api
+      - owner-domain-logic
+      - owner-external-integration
+      - owner-llm-modeling
+    import_paths:
+      - CLAUDE.md
+      - .devops/owners/owner-backend-api/owner.yaml
+      - .devops/owners/owner-domain-logic/owner.yaml
+      - .devops/owners/owner-external-integration/owner.yaml
+      - .devops/owners/owner-llm-modeling/owner.yaml
+      - .devops/owners/owner-backend-api/agent.md
+      - .devops/owners/owner-domain-logic/agent.md
+      - .devops/owners/owner-external-integration/agent.md
+      - .devops/owners/owner-llm-modeling/agent.md
+      - .devops/suites/suite-src-unit/PLAYBOOK.md
