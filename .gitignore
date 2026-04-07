@@ -1,0 +1,28 @@
+# BEGIN REPO-GOV MANAGED
+# Transient local outputs stay outside governance ownership and CODEOWNERS coverage.
+.repo-gov/
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.turbo/
+.venv/
+venv/
+ENV/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.playwright-cli/
+test-results/
+playwright-report/
+debug/runs/
+frontend/test-results/
+.logic_linting/
+.tmp/
+.tmp-*/
+.DS_Store
+.idea/
+.vscode/
+# END REPO-GOV MANAGED

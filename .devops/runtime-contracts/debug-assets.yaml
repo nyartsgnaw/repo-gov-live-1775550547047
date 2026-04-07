@@ -1,0 +1,32 @@
+test_assets:
+  - id: test-aaafe51aa0282498
+    path: src/runtime-critical.test.ts
+    kind: unit
+    framework: vitest
+    confidence: static_verified
+    mission: null
+    assumptions: []
+    local_repro_commands:
+      - pnpm exec vitest run src/runtime-critical.test.ts
+    targets:
+      files:
+        - src/api/routes.ts
+        - src/clients/openai-client.ts
+        - src/domain/user-service.ts
+      symbols:
+        - id: sym-0ee6963a5b896f67
+          qualified_name: getUserDisplayName
+        - id: sym-2cf1f1707354e19c
+          qualified_name: createEmbedding
+        - id: sym-a5f338602d7928e0
+          qualified_name: healthRoute
+    support_files: []
+    suites:
+      - suite-src-unit
+    evidence:
+      - import:src/api/routes.ts
+      - import:src/clients/openai-client.ts
+      - import:src/domain/user-service.ts
+      - symbol:sym-0ee6963a5b896f67
+      - symbol:sym-2cf1f1707354e19c
+      - symbol:sym-a5f338602d7928e0

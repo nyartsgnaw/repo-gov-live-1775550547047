@@ -1,0 +1,258 @@
+[
+  {
+    "path": "package.json",
+    "extension": ".json",
+    "language": "unknown",
+    "size": 168,
+    "hash": "df61e6724621f3c63986d04d0124b538450e8cd0",
+    "imports": [],
+    "importBindings": [],
+    "internalImports": [],
+    "exportedSymbols": [],
+    "definedSymbols": [],
+    "callHints": [],
+    "symbols": [],
+    "contract": null,
+    "tags": [
+      "manifest"
+    ]
+  },
+  {
+    "path": "src/api/routes.ts",
+    "extension": ".ts",
+    "language": "typescript",
+    "size": 57,
+    "hash": "a8b999536bde68dcdbbfdd15797e783a99dbdd60",
+    "imports": [],
+    "importBindings": [],
+    "internalImports": [],
+    "exportedSymbols": [
+      "healthRoute"
+    ],
+    "definedSymbols": [
+      "healthRoute"
+    ],
+    "callHints": [],
+    "symbols": [
+      {
+        "id": "sym-a5f338602d7928e0",
+        "path": "src/api/routes.ts",
+        "language": "typescript",
+        "kind": "function",
+        "name": "healthRoute",
+        "qualifiedName": "healthRoute",
+        "signature": "function healthRoute(): string",
+        "signatureHash": "7f24a900a9bfc7ca89810ee998e7a04b2eee5625",
+        "span": {
+          "startLine": 1,
+          "startColumn": 1,
+          "endLine": 3,
+          "endColumn": 2
+        },
+        "spanHash": "908ca027aea29b5d32fa9d3a6e1e6f8d7d6c2835",
+        "exported": true,
+        "parentQualifiedName": null,
+        "tags": [
+          "exported"
+        ]
+      }
+    ],
+    "contract": null,
+    "tags": []
+  },
+  {
+    "path": "src/clients/openai-client.ts",
+    "extension": ".ts",
+    "language": "typescript",
+    "size": 83,
+    "hash": "38e5f90298e16eac9c093db08361a0ece6b421a0",
+    "imports": [],
+    "importBindings": [],
+    "internalImports": [],
+    "exportedSymbols": [
+      "createEmbedding"
+    ],
+    "definedSymbols": [
+      "createEmbedding"
+    ],
+    "callHints": [],
+    "symbols": [
+      {
+        "id": "sym-2cf1f1707354e19c",
+        "path": "src/clients/openai-client.ts",
+        "language": "typescript",
+        "kind": "function",
+        "name": "createEmbedding",
+        "qualifiedName": "createEmbedding",
+        "signature": "function createEmbedding(): Promise<string>",
+        "signatureHash": "27245e73b26c6e1fea05035055471dc6cac4694b",
+        "span": {
+          "startLine": 1,
+          "startColumn": 1,
+          "endLine": 3,
+          "endColumn": 2
+        },
+        "spanHash": "908ca027aea29b5d32fa9d3a6e1e6f8d7d6c2835",
+        "exported": true,
+        "parentQualifiedName": null,
+        "tags": [
+          "exported"
+        ]
+      }
+    ],
+    "contract": null,
+    "tags": []
+  },
+  {
+    "path": "src/domain/user-service.ts",
+    "extension": ".ts",
+    "language": "typescript",
+    "size": 83,
+    "hash": "caa6dd1aa0221b2f73f38158692931fb49d7fe57",
+    "imports": [],
+    "importBindings": [],
+    "internalImports": [],
+    "exportedSymbols": [
+      "getUserDisplayName"
+    ],
+    "definedSymbols": [
+      "getUserDisplayName"
+    ],
+    "callHints": [
+      "trim"
+    ],
+    "symbols": [
+      {
+        "id": "sym-0ee6963a5b896f67",
+        "path": "src/domain/user-service.ts",
+        "language": "typescript",
+        "kind": "function",
+        "name": "getUserDisplayName",
+        "qualifiedName": "getUserDisplayName",
+        "signature": "function getUserDisplayName(name: string): string",
+        "signatureHash": "f3a34d25b2429a7802cdfcf6384e3ca4f8d61b2e",
+        "span": {
+          "startLine": 1,
+          "startColumn": 1,
+          "endLine": 3,
+          "endColumn": 2
+        },
+        "spanHash": "908ca027aea29b5d32fa9d3a6e1e6f8d7d6c2835",
+        "exported": true,
+        "parentQualifiedName": null,
+        "tags": [
+          "exported"
+        ]
+      }
+    ],
+    "contract": null,
+    "tags": []
+  },
+  {
+    "path": "src/runtime-critical.test.ts",
+    "extension": ".ts",
+    "language": "typescript",
+    "size": 550,
+    "hash": "c9d9f05c4cc6d2aefed1b7baaebd5c7fc5c44880",
+    "imports": [
+      "vitest",
+      "./api/routes",
+      "./clients/openai-client",
+      "./domain/user-service"
+    ],
+    "importBindings": [
+      {
+        "specifier": "vitest",
+        "names": [
+          {
+            "localName": "describe",
+            "importedName": "describe",
+            "isNamespace": false
+          },
+          {
+            "localName": "expect",
+            "importedName": "expect",
+            "isNamespace": false
+          },
+          {
+            "localName": "it",
+            "importedName": "it",
+            "isNamespace": false
+          }
+        ],
+        "resolvedPath": null,
+        "isTypeOnly": false
+      },
+      {
+        "specifier": "./api/routes",
+        "names": [
+          {
+            "localName": "healthRoute",
+            "importedName": "healthRoute",
+            "isNamespace": false
+          }
+        ],
+        "resolvedPath": "src/api/routes.ts",
+        "isTypeOnly": false
+      },
+      {
+        "specifier": "./clients/openai-client",
+        "names": [
+          {
+            "localName": "createEmbedding",
+            "importedName": "createEmbedding",
+            "isNamespace": false
+          }
+        ],
+        "resolvedPath": "src/clients/openai-client.ts",
+        "isTypeOnly": false
+      },
+      {
+        "specifier": "./domain/user-service",
+        "names": [
+          {
+            "localName": "getUserDisplayName",
+            "importedName": "getUserDisplayName",
+            "isNamespace": false
+          }
+        ],
+        "resolvedPath": "src/domain/user-service.ts",
+        "isTypeOnly": false
+      }
+    ],
+    "internalImports": [
+      "src/api/routes.ts",
+      "src/clients/openai-client.ts",
+      "src/domain/user-service.ts"
+    ],
+    "exportedSymbols": [],
+    "definedSymbols": [],
+    "callHints": [
+      "describe",
+      "it",
+      "toBe",
+      "expect",
+      "healthRoute",
+      "getUserDisplayName",
+      "createEmbedding"
+    ],
+    "symbols": [],
+    "contract": {
+      "role": "entrypoint",
+      "mission": null,
+      "scenarios": [],
+      "assumptions": [],
+      "commands": [
+        "pnpm exec vitest run src/runtime-critical.test.ts"
+      ],
+      "sourceHints": [],
+      "sectionHeadings": [],
+      "sections": []
+    },
+    "tags": [
+      "test",
+      "entrypoint",
+      "llm"
+    ]
+  }
+]

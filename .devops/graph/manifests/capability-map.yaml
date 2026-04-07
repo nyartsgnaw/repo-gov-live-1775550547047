@@ -1,0 +1,32 @@
+file_capabilities:
+  - path: package.json
+    capabilityId: infra.workflow
+    evidence:
+      - path:package.json
+    confidence: 0.8
+  - path: src/api/routes.ts
+    capabilityId: backend.api
+    evidence:
+      - path:src/api/routes.ts
+    confidence: 0.8
+  - path: src/clients/openai-client.ts
+    capabilityId: external.integration
+    evidence:
+      - path:src/clients/openai-client.ts
+    confidence: 0.8
+  - path: src/clients/openai-client.ts
+    capabilityId: llm.modeling
+    evidence:
+      - path:src/clients/openai-client.ts
+    confidence: 0.8
+  - path: src/domain/user-service.ts
+    capabilityId: domain.logic
+    evidence:
+      - fallback:domain.logic
+    confidence: 0.55
+  - path: src/runtime-critical.test.ts
+    capabilityId: llm.modeling
+    evidence:
+      - import:./clients/openai-client
+      - call:createEmbedding
+    confidence: 0.8

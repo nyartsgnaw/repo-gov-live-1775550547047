@@ -1,0 +1,74 @@
+id: owner-domain-logic
+capability_id: domain.logic
+label: Domain Logic
+principals:
+  - kind: codex-agent
+    identity: owner-domain-logic
+    displayName: owner-domain-logic
+  - kind: local-git
+    identity: owner-domain-logic@local
+    displayName: owner-domain-logic local git persona
+  - kind: github
+    identity: "@nyartsgnaw"
+    displayName: "@nyartsgnaw"
+governed_files:
+  - src/domain/user-service.ts
+scope_paths:
+  - src
+trigger_events:
+  - pr_opened
+  - synchronize
+  - ready_for_review
+  - check_run
+  - check_suite
+state_machine:
+  - idle
+  - requested
+  - analyzing_diff
+  - selecting_suites
+  - running_checks
+  - drafting_review
+  - approved
+  - changes_requested
+  - escalated
+  - stale_due_to_new_push
+allowed_actions:
+  - inspect_diff
+  - map_impacted_suites
+  - review_debug_assets
+  - run_scoped_checks
+  - draft_review
+  - request_changes
+  - escalate
+forbidden_actions:
+  - modify_protected_code
+  - commit_changes
+  - publish_artifacts
+  - apply_remote_github_settings
+  - approve_out_of_scope_changes
+suites:
+  - id: suite-src-unit
+    path: src
+    kind: unit
+    playbook_path: .devops/suites/suite-src-unit/PLAYBOOK.md
+    suite_definition_path: .devops/suites/suite-src-unit/suite.yaml
+    covered_files:
+      - src/api/routes.ts
+      - src/clients/openai-client.ts
+      - src/domain/user-service.ts
+    required_checks:
+      - check-backend-api
+      - check-domain-logic
+      - check-external-integration
+      - check-llm-modeling
+required_checks:
+  - check-domain-logic
+approval_policy:
+  draft_reviews_are_provisional: true
+  stale_review_dismissal: false
+  require_codeowner_review: true
+  require_status_checks: true
+escalation:
+  - Escalate when deterministic evidence is missing or contradictory.
+  - Escalate when changes land outside the declared capability scope.
+  - Escalate when governance control-plane files drift unexpectedly.

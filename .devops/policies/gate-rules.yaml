@@ -1,0 +1,52 @@
+check_rules:
+  - id: check-backend-api
+    trigger:
+      files:
+        - src/api/routes.ts
+      capabilities:
+        - backend.api
+    outputs:
+      workflows:
+        - check-backend-api
+      required: true
+  - id: check-domain-logic
+    trigger:
+      files:
+        - src/domain/user-service.ts
+      capabilities:
+        - domain.logic
+    outputs:
+      workflows:
+        - check-domain-logic
+      required: true
+  - id: check-external-integration
+    trigger:
+      files:
+        - src/clients/openai-client.ts
+      capabilities:
+        - external.integration
+    outputs:
+      workflows:
+        - check-external-integration
+      required: true
+  - id: check-infra-workflow
+    trigger:
+      files:
+        - package.json
+      capabilities:
+        - infra.workflow
+    outputs:
+      workflows:
+        - check-infra-workflow
+      required: true
+  - id: check-llm-modeling
+    trigger:
+      files:
+        - src/clients/openai-client.ts
+        - src/runtime-critical.test.ts
+      capabilities:
+        - llm.modeling
+    outputs:
+      workflows:
+        - check-llm-modeling
+      required: true

@@ -1,0 +1,85 @@
+id: suite-src-unit
+path: src
+kind: unit
+frameworks:
+  - vitest
+mission: Protect unit flows for src and provide a stable entrypoint for
+  owner-agent review.
+owners:
+  - id: owner-backend-api
+    capability_id: backend.api
+    github: "@nyartsgnaw"
+    codex: owner-backend-api
+  - id: owner-domain-logic
+    capability_id: domain.logic
+    github: "@nyartsgnaw"
+    codex: owner-domain-logic
+  - id: owner-external-integration
+    capability_id: external.integration
+    github: "@nyartsgnaw"
+    codex: owner-external-integration
+  - id: owner-llm-modeling
+    capability_id: llm.modeling
+    github: "@nyartsgnaw"
+    codex: owner-llm-modeling
+capabilities:
+  - backend.api
+  - domain.logic
+  - external.integration
+  - llm.modeling
+required_checks:
+  - check-backend-api
+  - check-domain-logic
+  - check-external-integration
+  - check-llm-modeling
+coverage:
+  files:
+    - src/api/routes.ts
+    - src/clients/openai-client.ts
+    - src/domain/user-service.ts
+  symbols:
+    - id: sym-0ee6963a5b896f67
+      qualified_name: getUserDisplayName
+    - id: sym-2cf1f1707354e19c
+      qualified_name: createEmbedding
+    - id: sym-a5f338602d7928e0
+      qualified_name: healthRoute
+assets:
+  - id: test-aaafe51aa0282498
+    path: src/runtime-critical.test.ts
+    kind: unit
+    framework: vitest
+    confidence: static_verified
+    targets:
+      files:
+        - src/api/routes.ts
+        - src/clients/openai-client.ts
+        - src/domain/user-service.ts
+      symbols:
+        - id: sym-0ee6963a5b896f67
+          qualified_name: getUserDisplayName
+        - id: sym-2cf1f1707354e19c
+          qualified_name: createEmbedding
+        - id: sym-a5f338602d7928e0
+          qualified_name: healthRoute
+    local_repro_commands:
+      - pnpm exec vitest run src/runtime-critical.test.ts
+    assumptions: []
+    support_files: []
+support_files: []
+approval_rules:
+  - "All blocking owners must approve or escalate: owner-backend-api,
+    owner-domain-logic, owner-external-integration, owner-llm-modeling."
+escalation:
+  - Escalate when required checks fail or owner mappings are unresolved.
+  - Re-run check-backend-api or escalate if the suite remains red.
+  - Re-run check-domain-logic or escalate if the suite remains red.
+  - Re-run check-external-integration or escalate if the suite remains red.
+  - Re-run check-llm-modeling or escalate if the suite remains red.
+evidence:
+  - import:src/api/routes.ts
+  - import:src/clients/openai-client.ts
+  - import:src/domain/user-service.ts
+  - symbol:sym-0ee6963a5b896f67
+  - symbol:sym-2cf1f1707354e19c
+  - symbol:sym-a5f338602d7928e0

@@ -1,0 +1,5 @@
+version: 1
+runtime_critical_coverage:
+  note: List runtime-critical files that still lack mapped verification assets and
+    explain why their blind spot is acceptable.
+  entries: []
