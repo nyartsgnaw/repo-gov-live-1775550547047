@@ -1,0 +1,11 @@
+{
+  "name": "ts-service",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "express": "^5.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.0"
+  }
+}
