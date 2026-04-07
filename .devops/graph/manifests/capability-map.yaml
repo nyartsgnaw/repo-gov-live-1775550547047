@@ -1,4 +1,9 @@
 file_capabilities:
+  - path: .gitignore
+    capabilityId: infra.workflow
+    evidence:
+      - path:.gitignore
+    confidence: 0.8
   - path: package.json
     capabilityId: infra.workflow
     evidence:

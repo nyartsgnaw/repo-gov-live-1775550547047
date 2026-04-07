@@ -12,8 +12,10 @@ principals:
     identity: "@nyartsgnaw"
     displayName: "@nyartsgnaw"
 governed_files:
+  - .gitignore
   - package.json
 scope_paths:
+  - .gitignore
   - package.json
 trigger_events:
   - pr_opened

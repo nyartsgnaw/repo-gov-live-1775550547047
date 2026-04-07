@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print governed files
-        run: 'echo "Files: 5"'
+        run: 'echo "Files: 6"'
       - name: Print required checks
         run: 'echo "Checks: check-backend-api, check-domain-logic,
           check-external-integration, check-infra-workflow, check-llm-modeling"'
@@ -53,7 +53,7 @@ jobs:
     if: ${{ always() }}
     steps:
       - name: Summarize triggered files
-        run: 'echo "Triggered files: package.json"'
+        run: 'echo "Triggered files: .gitignore, package.json"'
       - name: Summarize capability gates
         run: 'echo "Capabilities: infra.workflow"'
   check-llm-modeling:

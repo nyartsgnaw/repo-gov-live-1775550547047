@@ -14,7 +14,7 @@
 - owner-backend-api: backend.api -> 1 files | git owner-backend-api@local | github @nyartsgnaw
 - owner-domain-logic: domain.logic -> 1 files | git owner-domain-logic@local | github @nyartsgnaw
 - owner-external-integration: external.integration -> 1 files | git owner-external-integration@local | github @nyartsgnaw
-- owner-infra-workflow: infra.workflow -> 1 files | git owner-infra-workflow@local | github @nyartsgnaw
+- owner-infra-workflow: infra.workflow -> 2 files | git owner-infra-workflow@local | github @nyartsgnaw
 - owner-llm-modeling: llm.modeling -> 2 files | git owner-llm-modeling@local | github @nyartsgnaw
 
 ## Capability Checks
@@ -22,7 +22,7 @@
 - check-backend-api: 1 files
 - check-domain-logic: 1 files
 - check-external-integration: 1 files
-- check-infra-workflow: 1 files
+- check-infra-workflow: 2 files
 - check-llm-modeling: 2 files
 
 ## Suites

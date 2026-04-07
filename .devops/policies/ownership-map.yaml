@@ -48,6 +48,7 @@ capability_owners:
     capabilityId: infra.workflow
     label: Infra Workflow
     files:
+      - .gitignore
       - package.json
     principals:
       - kind: codex-agent

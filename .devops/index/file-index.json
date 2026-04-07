@@ -1,5 +1,23 @@
 [
   {
+    "path": ".gitignore",
+    "extension": "",
+    "language": "unknown",
+    "size": 409,
+    "hash": "e78c56fcf0e8f2e34b741170cf35e7e28f1ef9a3",
+    "imports": [],
+    "importBindings": [],
+    "internalImports": [],
+    "exportedSymbols": [],
+    "definedSymbols": [],
+    "callHints": [],
+    "symbols": [],
+    "contract": null,
+    "tags": [
+      "config"
+    ]
+  },
+  {
     "path": "package.json",
     "extension": ".json",
     "language": "unknown",
@@ -107,8 +125,8 @@
     "path": "src/domain/user-service.ts",
     "extension": ".ts",
     "language": "typescript",
-    "size": 83,
-    "hash": "caa6dd1aa0221b2f73f38158692931fb49d7fe57",
+    "size": 105,
+    "hash": "d54595c60624a2f8311da48c56f1e5e02792c12b",
     "imports": [],
     "importBindings": [],
     "internalImports": [],

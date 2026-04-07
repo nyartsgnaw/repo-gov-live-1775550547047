@@ -35,7 +35,7 @@
 - owner-backend-api: backend.api -> 1 files | github @nyartsgnaw
 - owner-domain-logic: domain.logic -> 1 files | github @nyartsgnaw
 - owner-external-integration: external.integration -> 1 files | github @nyartsgnaw
-- owner-infra-workflow: infra.workflow -> 1 files | github @nyartsgnaw
+- owner-infra-workflow: infra.workflow -> 2 files | github @nyartsgnaw
 - owner-llm-modeling: llm.modeling -> 2 files | github @nyartsgnaw
 
 ## Required Checks

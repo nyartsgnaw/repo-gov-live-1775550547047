@@ -39,6 +39,7 @@
 5. Explain every blocker using deterministic evidence first.
 
 ## Scope Hints
+- `.gitignore`
 - `package.json`
 
 ## Suites
